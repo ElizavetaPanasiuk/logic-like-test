@@ -1,0 +1,16 @@
+@import "../styles/colors.scss";
+
+.menuItem {
+  cursor: pointer;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 800;
+  font-size: inherit;
+  color: inherit;
+  text-align: left;
+
+  &.active {
+    background: $color-green;
+    color: $color-white;
+  }
+}

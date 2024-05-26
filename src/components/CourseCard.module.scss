@@ -1,0 +1,33 @@
+@import "../styles/colors";
+
+.CourseCard {
+  border-radius: 18px;
+  box-shadow: 0px 10px 13px -4px $color-shadow;
+  width: calc(33.333% - 12px);
+  overflow: hidden;
+  height: auto;
+  
+  @media (max-width: 1024px) {
+    width: calc(50% - 9px);
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  .ImageContainer {
+    height: 162px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .Image {
+    height: 144px;
+    width: 144px;
+  }
+
+  .Title {
+    padding: 12px 18px 18px;
+  }
+}

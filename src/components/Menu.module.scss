@@ -1,0 +1,11 @@
+@import "../styles/colors.scss";
+
+.Menu {
+  width: 264px;
+  height: fit-content;
+  border: 1px solid $color-border;
+  padding: 12px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+}
