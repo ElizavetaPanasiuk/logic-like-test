@@ -1,6 +1,6 @@
 import { FC, memo } from "react";
-import classses from "./MenuItem.module.scss";
 import clsx from "clsx";
+import classses from "./MenuItem.module.scss";
 
 interface IMenuItemProps {
   title: string;

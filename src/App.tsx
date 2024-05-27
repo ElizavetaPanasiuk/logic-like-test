@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+
 import "./styles/index.scss";
 import CoursesList from "./components/CoursesList";
 import Menu from "./components/Menu";
