@@ -5,7 +5,6 @@ const options: CreateAxiosDefaults = {
   headers: {
     "Content-Type": "application/json",
   },
-  
 };
 
 const axiosBasic = axios.create(options);

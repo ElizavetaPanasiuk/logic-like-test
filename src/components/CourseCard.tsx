@@ -1,7 +1,7 @@
 import { FC, memo } from "react";
-import { ICourse } from "../types";
 
 import classes from "./CourseCard.module.scss";
+import { ICourse } from "../types";
 
 const CourseCard: FC<ICourse> = memo(({ name, image, bgColor }) => (
   <div className={classes.CourseCard}>

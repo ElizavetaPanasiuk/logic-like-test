@@ -1,4 +1,5 @@
 import { FC, useCallback } from "react";
+
 import MenuItem from "./MenuItem";
 import classes from "./Menu.module.scss";
 

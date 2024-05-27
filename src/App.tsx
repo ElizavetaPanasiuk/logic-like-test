@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 import "./styles/index.scss";
-import CoursesList from "./components/CoursesList";
+import CourseList from "./components/CourseList";
 import Menu from "./components/Menu";
+import Error from "./components/Error";
+import Loader from "./components/Loader";
 import { courseService } from "./services/courses";
 import { ICourse } from "./types";
 
@@ -34,24 +36,24 @@ const App = () => {
       });
   }, []);
 
+  if (loading) {
+    return <Loader />;
+  }
+
+  if (error) {
+    return <Error />;
+  }
+
   return (
     <div className="app">
-      {loading ? (
-        "loading"
-      ) : error ? (
-        "error"
-      ) : (
-        <>
-          <Menu menuItems={tags} active={filter} onChange={setFilter} />
-          <CoursesList
-            courses={
-              filter === tags[0]
-                ? courses
-                : courses.filter(({ tags }) => tags.includes(filter))
-            }
-          />
-        </>
-      )}
+      <Menu menuItems={tags} active={filter} onChange={setFilter} />
+      <CourseList
+        courses={
+          filter === tags[0]
+            ? courses
+            : courses.filter(({ tags }) => tags.includes(filter))
+        }
+      />
     </div>
   );
 };
