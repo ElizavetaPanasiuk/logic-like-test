@@ -7,14 +7,12 @@ interface ICoursesListProps {
   courses: ICourse[];
 }
 
-const CoursesList: FC<ICoursesListProps> = ({ courses }) => {
-  return (
-    <div className={classes.СourseList}>
-      {courses.map((course) => (
-        <CourseCard key={course.id} {...course} />
-      ))}
-    </div>
-  );
-};
+const CoursesList: FC<ICoursesListProps> = ({ courses }) => (
+  <div className={classes.СourseList}>
+    {courses.map((course) => (
+      <CourseCard key={course.id} {...course} />
+    ))}
+  </div>
+);
 
 export default CoursesList;

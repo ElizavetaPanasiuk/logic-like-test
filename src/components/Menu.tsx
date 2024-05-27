@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback } from "react";
 import MenuItem from "./MenuItem";
 import classes from "./Menu.module.scss";
 
@@ -9,13 +9,20 @@ interface IMenuProps {
 }
 
 const Menu: FC<IMenuProps> = ({ menuItems, active, onChange }) => {
+  const onMenuItemClick = useCallback(
+    (title: string) => {
+      onChange(title);
+    },
+    [onChange]
+  );
+
   return (
     <nav className={classes.Menu}>
       {menuItems.map((title) => (
         <MenuItem
           key={title}
           title={title}
-          onClick={() => onChange(title)}
+          onClick={onMenuItemClick}
           active={active === title}
         />
       ))}
